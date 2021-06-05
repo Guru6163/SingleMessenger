@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect, useEffect } from "react";
 import { View, StyleSheet, KeyboardAvoidingView } from "react-native";
 import { Button, Input, Image, Text } from "react-native-elements";
 import firebase from "firebase/app";
@@ -8,6 +8,8 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
+
+  
 
   const register = () => {
     firebase
@@ -33,7 +35,7 @@ const RegisterScreen = ({ navigation }) => {
   }, [navigation]);
 
   return (
-    <KeyboardAvoidingView  style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <Text h3 style={{ marginBottom: 50 }}>
         Create a Single Account
       </Text>
